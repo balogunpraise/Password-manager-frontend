@@ -1,10 +1,6 @@
 <template>
-	<div class="cover">
+	<div class="account">
 		<form class="login" action="">
-			<div class="form-control">
-				<label for="email">Name</label>
-				<input name="email" type="email" placeholder="Enter your fullname" />
-			</div>
 			<div class="form-control">
 				<label for="email">Email</label>
 				<input name="email" type="email" placeholder="Enter your email" />
@@ -14,38 +10,26 @@
 				<input type="password" name="password" />
 			</div>
 
-			<div class="form-control">
-				<label for="confirm-password">Confirm Password</label>
-				<input type="password" name="confirm-password" />
+			<div class="form-control form-control-check">
+				<label for="remember-me">Remember Me</label>
+				<input name="remember-me" type="checkbox" />
 			</div>
-
-			<button class="btn" type="submit">Signup</button>
+			<button class="btn" type="submit">Login</button>
 		</form>
 	</div>
 </template>
-
 <script>
-// @ is an alias to /src
-
 export default {
-	name: 'HomeView',
-	components: {},
+	name: 'AccountView',
 }
 </script>
-
 <style scoped>
-.cover{
-	border: 1px solid #14213d;
-	border-radius: 5px;
-	width: 70%;
-	margin: auto;
-}
 .login {
 	width: 50%;
 	margin: auto;
 }
 .form-control {
-	margin: 5px 0;
+	margin: 20px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -53,7 +37,7 @@ export default {
 }
 .form-control label {
 	display: block;
-	flex: 4;
+	/* flex: 4; */
 }
 .form-control input {
 	width: 80%;
@@ -61,19 +45,19 @@ export default {
 	padding: 3px 0px;
 	font-size: 17px;
 }
-.form-control-check {
+.form-control-check{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.form-control-check label {
+.form-control-check label{
 	flex: 1;
 }
-.form-control-check input {
+.form-control-check input{
 	flex: 1;
 	height: 20px;
 }
-.btn {
+.btn{
 	width: 100%;
 	margin: 5px;
 	height: 40px;
@@ -82,9 +66,9 @@ export default {
 	color: white;
 	border: 1px solid #14213d;
 	cursor: pointer;
-	transition: 0.7s ease;
+	transition: .7s ease;
 }
-.btn:hover {
+.btn:hover{
 	background: white;
 	color: #14213d;
 }
