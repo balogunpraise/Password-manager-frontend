@@ -24,9 +24,17 @@ export default {
 }
 </script>
 <style scoped>
+.account{
+	border: 1px solid #14213d;
+	border-radius: 5px;
+	width: 70%;
+	margin: auto;
+	box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
 .login {
 	width: 50%;
 	margin: auto;
+	margin-bottom: 10px;
 }
 .form-control {
 	margin: 20px 0;
