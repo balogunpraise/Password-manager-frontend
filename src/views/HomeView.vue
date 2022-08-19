@@ -1,94 +1,17 @@
 <template>
 	<div class="cover">
-		<form class="login" action="">
-			<div class="form-control">
-				<label for="email">Name</label>
-				<input name="email" type="email" placeholder="Enter your fullname" />
-			</div>
-			<div class="form-control">
-				<label for="email">Email</label>
-				<input name="email" type="email" placeholder="Enter your email" />
-			</div>
-			<div class="form-control">
-				<label for="password">Password</label>
-				<input type="password" name="password" />
-			</div>
-
-			<div class="form-control">
-				<label for="confirm-password">Confirm Password</label>
-				<input type="password" name="confirm-password" />
-			</div>
-
-			<button class="btn" type="submit">Signup</button>
-		</form>
+		<nav>
+			<router-link to="/">Signup</router-link>
+			<router-link to="/account">Login</router-link>
+			<router-link to="/dashboard">Dashboard</router-link>
+		</nav>
+		<router-view />
 	</div>
 </template>
-
 <script>
-// @ is an alias to /src
-
 export default {
 	name: 'HomeView',
 	components: {},
 }
 </script>
-
-<style scoped>
-.cover{
-	border: 1px solid #14213d;
-	border-radius: 5px;
-	width: 70%;
-	margin: auto;
-	box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
-}
-.login {
-	width: 50%;
-	margin: auto;
-	margin-bottom: 10px;
-}
-.form-control {
-	margin: 5px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 50px;
-}
-.form-control label {
-	display: block;
-	flex: 4;
-}
-.form-control input {
-	width: 80%;
-	height: 40px;
-	padding: 3px 0px;
-	font-size: 17px;
-}
-.form-control-check {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.form-control-check label {
-	flex: 1;
-}
-.form-control-check input {
-	flex: 1;
-	height: 20px;
-}
-.btn {
-	width: 100%;
-	margin: 5px;
-	height: 40px;
-	font-size: 17px;
-	background: #14213d;
-	color: white;
-	border: 1px solid #14213d;
-	cursor: pointer;
-	transition: 0.7s ease;
-}
-.btn:hover {
-	background: white;
-	color: #14213d;
-}
-</style>
+<style scoped></style>

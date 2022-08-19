@@ -1,18 +1,12 @@
 <template>
 	<div class="app">
-		<Sidebar />
-		<div class="app-inner">
-			<nav>
-				<router-link to="/">Signup</router-link>
-				<router-link to="/account">Login</router-link>
-			</nav>
-			<router-view />
-		</div>
+		<HomeView />
 	</div>
 </template>
 
 <script setup>
-import Sidebar from './components/Sidebar.vue'
+import HomeView from './views/HomeView.vue'
+// import DashboardView from './views/DashboardView.vue'
 </script>
 
 <style>
@@ -22,6 +16,7 @@ import Sidebar from './components/Sidebar.vue'
 	-moz-osx-font-smoothing: grayscale;
 	/* text-align: center; */
 	color: #2c3e50;
+	
 }
 * {
 	margin: 0;
@@ -29,17 +24,14 @@ import Sidebar from './components/Sidebar.vue'
 	box-sizing: border-box;
 	font-family: 'Fira sans', sans-serif;
 }
-.app {
-	display: flex;
-}
-.app-inner{
+/* .app-inner {
 	width: 80%;
 	flex: 1 1 0;
 	padding: 2rem;
 	@media (max-width: 768) {
 		padding-left: 6rem;
 	}
-}
+} */
 nav {
 	text-align: center;
 	padding: 30px;
