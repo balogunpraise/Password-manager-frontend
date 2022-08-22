@@ -1,61 +1,43 @@
 <template>
 	<div class="app-inner">
 		<Sidebar />
-		<div class="main-pane">
-			<LeftpaneView :creds="creds"/>
-			<RightpaneView />
-		</div>
+		<Mainpane />
 	</div>
 </template>
 <script>
 import Sidebar from '../components/Sidebar.vue'
-import LeftpaneView from '../components/LeftpaneView.vue'
-import RightpaneView from '../components/RightpaneView.vue'
+import Mainpane from '../components/Mainpane.vue'
+import axios from 'axios'
+
 export default {
 	name: 'DashboardView',
+	components: {
+		Sidebar,
+		Mainpane,
+	},
 	data() {
 		return {
 			creds: [],
 		}
 	},
-	created() {
-		this.creds = [
-			{
-				id: 1,
-				username: 'balogunpraise2@gmail.com',
-				password: 'linkTest@123',
-				website: 'Linkedin',
-				address: 'https://linkedin.com',
-			},
-			{
-				id: 2,
-				username: 'onimsi10@yahoo.com',
-				password: 'Pa$$w0rd',
-				website: 'Yahoo',
-				address: 'https://yahoomail.com',
-			},
-			{
-				id: 3,
-				username: 'ptestemailaddress@gmail.com',
-				password: 'Mailtest@123',
-				website: 'Gmail',
-				address: 'https://gmail.com',
-			},
-		]
+	async created() {
+		const response = await axios.get('user', {
+			headers: {
+				Authorization: 'Bearer' + localStorage.getItem('token')
+			}
+		})
 	},
 	methods: {},
-	components: {
-		Sidebar,
-		LeftpaneView,
-		RightpaneView,
-	},
 	props: {},
 }
 </script>
 <style scoped>
-.main-pane {
+.app-inner {
 	display: flex;
-	justify-content: space-around;
-	padding-left: 120px;
+	/* justify-content: space-around; */
+	/* padding-left: 50px; */
+	align-items: flex-start;
+	margin-left: 200px;
+	width: calc(100% - 250px);
 }
 </style>

@@ -1,55 +1,112 @@
 <template>
-	<aside>
-		<p>
-			<span class="material-symbols-outlined"> dashboard </span>
-			Dashboard
-		</p>
-		<div class="navigations">
-			<p>
-				<span class="material-symbols-outlined"> folder_open </span>
-				My folder
-			</p>
-			<p>
-				<span class="material-symbols-outlined"> list_alt </span>
-				My logins
-			</p>
+	<aside id="sidebar">
+		<div class="logo">
+			<img
+				src="https://cdn-icons-png.flaticon.com/512/891/891399.png"
+				alt="logo"
+			/>
+			<h2>ULock</h2>
+		</div>
+		<div class="items">
+			<li @click="enableCred()" :class="[cred ? 'active' : '', 'menu']">
+				<span class="material-symbols-outlined"> key </span><a>Credentials</a>
+			</li>
+
+			<li @click="enableTodo()"  :class="[todo ? 'active' : '', 'menu']">
+				<span class="material-symbols-outlined"> checklist_rtl </span
+				><a>Add Credentials</a>
+			</li>
+			<li @click="enableNote()" :class="[note ? 'active' : '', 'menu']">
+				<span class="material-symbols-outlined"> note </span><a>Notes</a>
+			</li>
 		</div>
 	</aside>
 </template>
-<script></script>
+<script>
+export default {
+	name: 'Sidebar',
+	data() {
+		return {
+			cred: true,
+			todo: false,
+			note: false,
+		}
+	},
+	methods: {
+		enableCred() {
+			this.cred = true
+			this.todo = false
+			this.note = false
+		},
+		enableTodo() {
+			this.cred = false
+			this.todo = true
+			this.note = false
+		},
+		enableNote() {
+			this.cred = false
+			this.todo = false
+			this.note = true
+		},
+	},
+}
+</script>
+
 <style scoped>
-aside {
+#sidebar {
 	position: fixed;
 	top: 0;
-	display: flex;
-	flex-direction: column;
-	background: #14213d;
-	color: white;
-	overflow: hidden;
-	width: calc(8rem + 5px);
-	min-height: 100vh;
-	padding: 1rem;
-	transition: 0.4s ease-out;
-	z-index: 100;
+	left: 0;
+	background: var(--color-primary);
+	width: 200px;
+	height: 100%;
+	z-index: 10;
 }
-p {
+#sidebar .logo {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	color: #fff;
+	padding: 30px 0 0 30px;
 }
-.navigations {
-	margin-top: 50px;
-	height: 30px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	gap: 10px;
+#sidebar .logo img {
+	width: 40px;
+	margin-right: 15px;
 }
-.navigations p {
+#sidebar .items {
+	margin-top: 40px;
+}
+#sidebar .items li {
+	list-style: none;
+	padding: 15px 0;
+	transition: 0.3s ease;
+}
+#sidebar .items li:hover {
+	background: #253047;
 	cursor: pointer;
-	transition: 0.5s ease;
 }
-.navigations p:hover {
-	font-weight: bold;
+/* #sidebar .items li:nth-child(1) {
+	border-left: 4px solid #fff;
+} */
+.active {
+	border-left: 4px solid #fff;
+}
+#sidebar .items li .material-symbols-outlined {
+	color: #253047;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	margin: 0 10px 0 25px;
+}
+#sidebar .items li:hover .material-symbols-outlined,
+#sidebar .items li:hover a {
+	color: #f3f4f6;
+}
+#sidebar .items li a {
+	text-decoration: none;
+	color: #253047;
+	font-weight: 300px;
+	transition: 0.3s ease;
 }
 </style>

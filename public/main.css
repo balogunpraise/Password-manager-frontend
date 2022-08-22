@@ -1,18 +1,12 @@
-body{
-    --color-primary: #009579;
-    --color-primary-dark: #007f67;
-    --color-secondary: #252c6a;
-    --color-error: #cc3333;
-    --color-success: #4bb544;
-    --border-radius: 4px;
+body {
+	--color-primary: #009579;
+	--color-primary-dark: #007f67;
+	--color-secondary: #252c6a;
+	--color-error: #cc3333;
+	--color-success: #4bb544;
+	--border-radius: 4px;
 
-    /* margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px; */
-    background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/1672004/pexels-photo-1672004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;	
-    
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url('https://images.pexels.com/photos/1672004/pexels-photo-1672004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+	background-size: cover;
 }
