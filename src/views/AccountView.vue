@@ -1,21 +1,38 @@
 <template>
-	<div class="account">
-		<form class="login" action="">
-			<div class="form-control">
-				<label for="email">Email</label>
-				<input name="email" type="email" placeholder="Enter your email" />
-			</div>
-			<div class="form-control">
-				<label for="password">Password</label>
-				<input type="password" name="password" />
-			</div>
-
-			<div class="form-control form-control-check">
-				<label for="remember-me">Remember Me</label>
-				<input name="remember-me" type="checkbox" />
-			</div>
-			<button class="btn" type="submit">Login</button>
-		</form>
+	<div class="account_body">
+		<div class="container">
+			<form action="" class="form" id="login">
+				<h1 class="form__title">Login</h1>
+				<div class="form__message form__message--error">
+					Incorrect username/password combination.
+				</div>
+				<div class="form__input-group">
+					<input
+						type="text"
+						class="form__input"
+						autofocus
+						placeholder="Username or email"
+					/>
+				</div>
+				<div class="form__input-group">
+					<input
+						type="text"
+						class="form__input"
+						autofocus
+						placeholder="Password"
+					/>
+				</div>
+				<button class="form__button" type="submit">Continue</button>
+				<p class="form__text">
+					<a href="#" class="form__link">Forgot your password?</a>
+				</p>
+				<p class="form__text">
+					<a id="linkCreateAccount" class="form__link"
+						>Don't have an account? Create account</a
+					>
+				</p>
+			</form>
+		</div>
 	</div>
 </template>
 <script>
@@ -24,60 +41,12 @@ export default {
 }
 </script>
 <style scoped>
-.account{
-	border: 1px solid #14213d;
-	border-radius: 5px;
-	width: 70%;
-	margin: auto;
-	box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.login {
-	width: 50%;
-	margin: auto;
-	margin-bottom: 10px;
-}
-.form-control {
-	margin: 20px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 50px;
-}
-.form-control label {
-	display: block;
-	/* flex: 4; */
-}
-.form-control input {
-	width: 80%;
-	height: 40px;
-	padding: 3px 0px;
-	font-size: 17px;
-}
-.form-control-check{
+.form__body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-}
-.form-control-check label{
-	flex: 1;
-}
-.form-control-check input{
-	flex: 1;
-	height: 20px;
-}
-.btn{
-	width: 100%;
-	margin: 5px;
-	height: 40px;
-	font-size: 17px;
-	background: #14213d;
-	color: white;
-	border: 1px solid #14213d;
-	cursor: pointer;
-	transition: .7s ease;
-}
-.btn:hover{
-	background: white;
-	color: #14213d;
+	justify-content: center;
+	font-size: 18px;
 }
 </style>
