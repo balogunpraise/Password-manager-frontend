@@ -150,10 +150,10 @@ export default {
 				password: this.loginpassword,
 				rememberme: this.rememberme,
 			})
-			localStorage.setItem('token', response.data.token)
+			localStorage.setItem('token', "1234")
 			// this.loginresponse = response
-			// this.$router.push('/dashboard' )
-            // console.log(response)
+			this.$router.push('/dashboard')
+			//console.log(me)
 		},
 	},
 }

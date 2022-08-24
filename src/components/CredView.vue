@@ -47,6 +47,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-radius: 5px;
 }
 .my-creds {
 	width: 200px;

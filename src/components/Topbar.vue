@@ -8,13 +8,23 @@
 		</div>
 		<div class="profile">
 			<span class="material-symbols-outlined"> notifications </span>
-			<div class="pname"></div>
+			<div class="account-action">
+				<div class="pname"></div>
+				<a href="" class="logout">Logout</a>
+			</div>
 		</div>
 	</div>
 </template>
 <script>
+import axios from 'axios'
 export default {
 	name: 'Topbar',
+	methods: {
+		async logout() {
+			await axios.post('Account/logout')
+			this.$router.push('/')
+		},
+	},
 }
 </script>
 <style scoped>
@@ -58,5 +68,15 @@ export default {
 	height: 30px;
 	background: #253047;
 	border-radius: 50%;
+}
+.account-action {
+	display: flex;
+	justify-content: center;
+	gap: 2px;
+	align-items: center;
+}
+.account-action a {
+	text-decoration: none;
+	color: #253047;
 }
 </style>

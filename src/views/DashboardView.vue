@@ -21,11 +21,13 @@ export default {
 		}
 	},
 	async created() {
-		const response = await axios.get('user', {
+		const response = await axios.get('Account/user', {
 			headers: {
-				Authorization: 'Bearer' + localStorage.getItem('token')
+				// 'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + localStorage.getItem('token')
 			}
 		})
+		console.log(response)
 	},
 	methods: {},
 	props: {},

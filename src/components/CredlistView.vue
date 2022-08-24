@@ -23,14 +23,13 @@ export default {
             this.data = result;
         },
     },
-    async created() {
-        //this.getCredentials();
-        const response = await axios.get('user', {
-            headers: {
-                Authorization: 'Bearer' + localStorage.getItem('token')
-            }
-        })
-    },
+    // async created() {
+    //     const response = await axios.get('user', {
+    //         headers: {
+    //             Authorization: 'Bearer' + JSON.parse(localStorage.getItem('token'))
+    //         }
+    //     })
+    // },
     components: { CredView }
 }
 </script>
